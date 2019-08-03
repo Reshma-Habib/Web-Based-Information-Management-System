@@ -1,0 +1,188 @@
+$light-violate: #9b59b6;
+$pink: #ff7675;
+$green: #2ecc71;
+$violate: #8e44ad;
+$watermelon: #ff4757;
+$white: #ecf0f1;
+$moonlightblue:#2c3e50;
+$black:#2f3542;
+$peace:#747d8c;
+html, body{
+	width: 100%;
+	height: 100%;
+	font-size: 10pt
+}
+@mixin padding-lr($unit){
+	padding-left: $unit;
+	padding-right: $unit;
+}
+@mixin margin-lr($unit){
+	margin-left: $unit;
+	margin-right: $unit;
+}
+.wrapper{
+	position: relative;
+	background: $watermelon;
+	height: 100%;
+	width: 100%;
+}
+header{
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+
+	@include margin-lr(-15px);
+	.top-link{
+	background: $black;
+	width: 230px;
+	float: left ;
+	padding: 7.5px;
+	font-size:16pt;
+	text-align: center;
+	a{
+		text-decoration: none;
+		color: $white;
+	}
+	a:hover{
+		color: $peace;
+	}
+	
+}
+.top-meanu{
+	background: $black;
+	width: calc(100% - 230px);
+	float: left;
+
+	.custom-nav{
+		padding: 0;
+
+		.navbar-brand{
+			padding: 11px;
+			color: $white;
+		}
+		.navbar-brand:hover{
+			background: $black;
+
+		}
+
+		ul > li > a{
+			position: relative;
+			display: block;
+			padding :13.5px 15px;
+			color: $white !important;
+			.badge{
+				position: absolute;
+				top:7px;
+				right: 0;
+			}
+		}
+		ul li a:hover{
+				color: $white !important;
+				background: $peace !important;
+			}
+			li.active{
+				background: $moonlightblue;
+				a{
+					color: $white !important;
+				}
+			}
+			.dropdown{
+				position: relative;
+			.dropdown-menu{
+				left: auto;
+				right: 0;
+				a{
+					color:  $moonlightblue !important;
+				}
+			}
+			img{
+				height: 25px;
+				weight: 25px;
+				border-radius: 100%;
+				position: relative;
+				margin-top: -15px;
+				top: 7px
+			}
+
+			}
+			
+	}
+}
+}
+.mainbody{
+	position: relative;
+	height: 100%;
+	background: green;
+	@include margin-lr(-15px);
+	
+	.sidebar{
+		position: fixed;
+		height: 100%;
+		width: 230px;
+		background: $peace;
+		left: 0px;
+		top: 0;
+		float: left;
+		overflow-x: hidden;
+	    overflow-y: auto;
+	    transition: all.3s ease-in-out;
+
+		.sidemenu{
+			margin-top: 46px;
+			background: $peace;
+			min-height: 650px;
+			padding-bottom: 50px;
+
+			ul > li > a{
+			position: relative;
+			display: block;
+			padding :13.5px 15px;
+			color: $white !important;
+		}
+}
+}
+    .content{
+    	float: right;
+		background: blue;
+		height: 100%;
+		width: calc(100% - 230px);
+		
+		transition: all.3s ease-in-out;
+
+		.component{
+			margin-top: 46px;
+			min-height: 100%;
+			background: $white;
+
+			
+			
+		}
+
+		footer{
+			width: auto;
+			padding: 20px;
+			background: $black;
+		}
+    }
+    
+}
+
+.sidebar.off{
+	left: -230px;
+
+}
+.content.on{
+	width: 100%;
+}
+.rightbar.pull-on{
+	right: 0;
+}
+
+
+/*-----------media query------------------*/
+
+@media only screen and (max-width: 767px){
+	.main{
+		width: 100%;
+	}
+}

@@ -1,0 +1,9 @@
+$(function(){
+	$("#off-canvas").click(function(){
+		$(".sidebar").toggleClass("off");
+		$(".content").toggleClass("on");
+});
+	$("#pull").click(function(){
+		$(".rightbar").toggleClass("pull-on");
+	})
+});
